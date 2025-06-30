@@ -1,0 +1,13 @@
+*{
+    color: black;
+    background-color:#FFFFFF;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+header{
+    border : 5px solid black;
+    background-color: #FFFFFF;
+    padding: 30px;
+    margin: 10px;
+    text-align:center;
+}
