@@ -1,17 +1,57 @@
+@font-face {
+  font-family: "Geist-SemiBold";
+  src: url("attachments/geist-font-1.5.0/fonts/Geist/otf/Geist-SemiBold.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #111;
   color: white;
+}
+
+html,body{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+  flex: 1;
+}
+
+body {
+  background-color: #111;
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 3px
+    ),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 3px);
+  background-size: 40px 40px;
+  color: white;
+  font-family: "Geist-SemiBold", sans-serif;
+  flex: column;
 }
 
 nav {
   position: relative;
-  height: 50px;
+  height: 100px;
+}
+
+nav button {
+  background-color: #111;
+  color: red;
 }
 
 .navigation {
+  padding: 0;
+  margin: 0;
+  color: #111;
+  border: #111 solid 2px;
+
   position: absolute;
   top: 50%;
   left: 50%;
@@ -29,38 +69,44 @@ header {
   text-align: center;
   padding: 20px;
 }
-
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(2,300px); 
   gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 700px; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.introduction,.image,
+.skills {
+  background-color: #1a1a1a;
+  color: white;
   padding: 20px;
-  color: #111;
-}
-
-.introduction {
-  background-color: #111;
-}
-
-.image {
+  border: 2px solid white;
+  border-radius: 10px;
   height: 300px;
   width: 300px;
+  overflow: auto;
 }
 
-.skills {
-  background-color: #111;
+.image{
+  
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
 }
 
 footer {
+  background-color: transparent
+  color #1a1a1a;
   text-align: center;
-  padding: 20px;
-  background-color: #111;
-  color: white;
-}
-
-.introduction,
-.image,
-.skills {
-  border: white solid 2px;
-  border-radius: 10px;
 }
