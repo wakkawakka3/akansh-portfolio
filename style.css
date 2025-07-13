@@ -29,13 +29,17 @@ body {
   color: white;
 }
 
-main {
-  flex: 1;
+h1 {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 3rem;
+  size-adjust: normal;
 }
 
-h1 {
-  font-size: 3rem;
-  margin: 2px 0px 5px 0px;
+h1:hover {
+  color: yellow;
+  transition: color 1s ease;
 }
 
 h2 {
@@ -56,21 +60,37 @@ header {
 }
 
 nav {
+  size: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   padding: 1rem;
+  font-size: 1.25rem;
+}
+
+a {
+  size: 2rem;
+  color: blue;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover {
+  color: red;
+  transition: color 1s ease;
 }
 
 nav button {
   background-color: #111;
   margin: 0.25rem;
+  padding: 1rem;
 }
 
 .navigation {
   display: flex;
-  gap: 0.5rem;
+  padding: 1rem;
+  gap: 1.25rem;
 }
 
 .theme {
@@ -79,9 +99,14 @@ nav button {
   justify-content: center;
 }
 
+.theme :hover {
+  color: red;
+  transition: color 1s ease;
+}
+
 footer {
   font-size: 1rem;
-  margin-top: 1rem;
+  margin: 2rem;
   text-align: center;
 }
 
@@ -96,7 +121,7 @@ footer {
 
 button {
   background-color: transparent;
-  color: red;
+  color: blue;
   padding: 0.625rem 1.25rem;
   border-radius: 1.5625rem;
   border: none;
@@ -110,12 +135,12 @@ button {
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  gap: 1.25rem;
+  gap: 1.5rem;
   justify-content: center;
   height: 100%;
   margin: 2.5rem auto 0;
   width: 100%;
-  max-width: 43.75rem;
+  max-width: 45rem;
 }
 
 .grid-container .image {
@@ -132,7 +157,12 @@ button {
 
 .introduction,
 .skills,
-.blog {
+.blog,
+.message,
+.socials,
+.location,
+.project-1,
+.project-2 {
   background-color: #1a1a1a;
   padding: 1.25rem;
   border: 0.125rem solid white;
@@ -156,14 +186,20 @@ button {
   .grid-container {
     grid-template-columns: 1fr;
     place-items: center;
+    gap: 16px;
   }
 
   .image,
   .introduction,
   .skills,
+  .working,
+  .testimonial,
   .blog {
+    border: none;
     max-width: 100%;
     min-height: auto;
+    background-color: transparent;
+    text-align: center;
   }
 
   nav {
