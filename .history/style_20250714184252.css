@@ -159,7 +159,6 @@ button {
 .skills,
 .blog,
 .message,
-.resume,
 .socials,
 .location,
 .project-1,
@@ -188,6 +187,7 @@ button {
     grid-template-columns: 1fr;
     place-items: center;
     gap: 16px;
+    border-bottom: white 1px;
   }
 
   .image,
@@ -195,15 +195,8 @@ button {
   .skills,
   .working,
   .testimonial,
-  .blog,
-  .message,
-  .resume,
-  .project-1,
-  .project-2,
-  .socials,
-  .location {
+  .blog {
     border: none;
-    border-bottom: 1px solid #fff;
     max-width: 100%;
     min-height: auto;
     background-color: transparent;

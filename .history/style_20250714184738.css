@@ -159,7 +159,6 @@ button {
 .skills,
 .blog,
 .message,
-.resume,
 .socials,
 .location,
 .project-1,
@@ -197,10 +196,10 @@ button {
   .testimonial,
   .blog,
   .message,
-  .resume,
+  .resume
   .project-1,
   .project-2,
-  .socials,
+  .socails,
   .location {
     border: none;
     border-bottom: 1px solid #fff;
