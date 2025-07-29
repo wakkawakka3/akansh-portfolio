@@ -114,12 +114,7 @@ button {
   max-width: 80rem;
 }
 
-.introduction,
-.working,
-.blog,
-.project-1,
-.message,
-.location {
+.grid-item {
   background-color: #1a1a1a;
   padding: 1.25rem;
   border: 0.125rem solid white;
@@ -127,14 +122,13 @@ button {
   min-height: 20rem;
   min-width: 15rem;
   overflow: auto;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.card {
-  background-color: #1a1a1a;
-  padding: 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 0.625rem;
-  overflow: auto;
+.grid-item:hover {
+  transform: scale(1.05) translateY(-10px);
+  z-index: 10;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
 }
 
 .image img {
