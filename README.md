@@ -8,4 +8,4 @@ HTML5
 CSS
 JavaScript
 
-Live Site: akansh5.github.io/akansh-portfolio
+Live Site: https://akansh5.github.io/akansh-portfolio/
