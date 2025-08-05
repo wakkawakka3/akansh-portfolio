@@ -43,9 +43,14 @@ button:hover {
   transition: color 0.3s ease;
 }
 
+.sound-button {
+  padding: 0rem;
+  margin: 0px;
+}
+
 h1 {
   display: inline-block;
-  margin: 1rem;
+  padding: 1rem;
   font-size: 3rem;
 }
 
