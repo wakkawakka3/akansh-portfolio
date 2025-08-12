@@ -1,12 +1,11 @@
+//name pronounciation
 function speakName() {
   const sound = new SpeechSynthesisUtterance("Ekansh Rawat");
   sound.lang = "en-US";
   speechSynthesis.speak(sound);
 }
 
-function livechat(){
-    const message = document.getElementsByClassName("message")
-}
+//local time
 function updateClock() {
   const localtime = document.getElementsByClassName("local-time")[0];
   const now = new Date();
@@ -30,3 +29,36 @@ function updateClock() {
 
 setInterval(updateClock, 1000);
 updateClock();
+
+
+//theme control
+let lightmode = localStorage.getItem('theme');
+  const themeicon = document.querySelector('.theme-icon');
+
+
+  if (lightmode === 'active') {
+    enableLightmode();
+  } else {
+    disableLightmode();
+  }
+
+  
+  themeicon.addEventListener("click", () => {
+    lightmode = localStorage.getItem('theme');
+    if (lightmode !== 'active') {
+      enableLightmode();
+    } else {
+      disableLightmode();
+    }
+  });
+
+  function enableLightmode() {
+    document.body.classList.add('light-mode');
+    localStorage.setItem('theme', 'active');
+  }
+
+  function disableLightmode() {
+    document.body.classList.remove('light-mode');
+    localStorage.setItem('theme', 'inactive');
+  }
+

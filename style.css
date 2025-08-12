@@ -31,6 +31,31 @@ body {
   font-size: 1rem;
 }
 
+ body.light-mode {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  font-family: "Geist-SemiBold", sans-serif;
+  background-color: #EEE;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.04) 1px,
+      transparent 3px
+    ),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 3px);
+  background-size: 2.5rem 2.5rem;
+  color: black;
+  font-size: 1rem;
+
+  p{
+    color: black;
+  }
+  .grid-item p{
+    color: white;
+  }
+
+ }
+
 a,
 button {
   color: #82aaff;
