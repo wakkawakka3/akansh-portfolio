@@ -337,8 +337,36 @@ h1 {
   }
 }
 
-.intro {
+.container {
   animation: fadeInUp 0.8s ease;
+}
+
+/* 404 PAGE */
+
+.error-image {
+  max-width: 500px;
+  margin: 0 auto 2rem auto;
+  border: 5px solid var(--border);
+  overflow: hidden;
+}
+
+.error-image img {
+  width: 100%;
+  display:flex;
+  object-fit: cover;
+}
+
+.error-content {
+  text-align: center;
+  max-width: 700px;
+}
+
+.return-home-link {
+  display: inline-block;
+  color: var(--fg);
+  border: 5px solid var(--border);
+  padding: 10px 10px;
+
 }
 
 @media (max-width: 768px) {
