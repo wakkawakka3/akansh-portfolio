@@ -1,236 +1,132 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Akansh Rawat - Developer & Designer" />
-    <meta property="og:title" content="Akansh Rawat" />
-    <meta
-      property="og:description"
-      content="Developer, Designer & AI Enthusiast"
-    />
-    <meta
-      name="google-site-verification"
-      content="LhRnPLHiq7Vh-8YFzKLldZN1Q7PstllXNqSZ4G2-T9w"
-    />
-
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Akansh Rawat — developer &amp; designer taking AI products from zero to one." />
     <title>Akansh Rawat</title>
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-
-    <link rel="icon" type="image/png" href="./assets/favicon.png">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body>
-    <main class="container">
-      <section class="intro">
-        <h1>Akansh Rawat</h1>
-        <p class="intro-subtitle">Developer, Designer & AI Enthusiast</p>
-        <p class="intro-bio">
-          Passionate about creating projects that blend creativity with purpose.
-          I enjoy exploring new ideas, improving my craft, and building things
-          people genuinely enjoy using. Always learning, always building.
+  <body id="top">
+    <header class="topbar">
+      <a class="signature" href="index.html#top">akansh</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="nav-item nav-home" href="index.html#top">home</a>
+        <a class="nav-item nav-work" href="index.html#work">work</a>
+        <a class="nav-item nav-about" href="about.html">about</a>
+      </nav>
+      <div class="contact-menu">
+        <button class="say-hi" type="button" aria-haspopup="dialog" aria-expanded="false">say hi.</button>
+        <div class="contact-card" role="dialog" aria-label="Contact options" hidden>
+          <button type="button" class="copy-email" data-email="akanshrawat.in@gmail.com">
+            <span>akanshrawat.in@gmail.com</span>
+            <small>copy</small>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="home" class="page">
+      <section class="intro" aria-label="Introduction">
+        <ol class="intro-list">
+          <li>
+            <span class="number">[01]</span>
+            <p><strong>Developer &amp; designer</strong> taking <strong>AI</strong> products from zero to one, for students and small teams.</p>
+          </li>
+          <li>
+            <span class="number">[02]</span>
+            <p>Building <strong>digital experiences</strong> for the web, from thoughtful interfaces to working systems.</p>
+          </li>
+          <li>
+            <span class="number">[03]</span>
+            <p>Co-founded <strong>BrewCrew Club</strong>, a community platform for cafés, conversations, and discovery.</p>
+          </li>
+          <li>
+            <span class="number">[04]</span>
+            <p>Studying <strong>Computer Engineering</strong> with an AI &amp; ML specialization at KIIT University.</p>
+          </li>
+          <li>
+            <span class="number">[05]</span>
+            <p>Exploring <strong>open-source work</strong> and building side projects with curiosity and care.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="detail-row" aria-label="Interests and philosophy">
+        <ul class="interest-list">
+          <li><strong>DESIGN</strong> + CODE</li>
+          <li><strong>BRAND</strong> + PRODUCT</li>
+          <li><strong>MUSIC</strong> + MOTION</li>
+          <li><strong>MYTHS</strong> + MACHINE LEARNING</li>
+          <li><strong>ARTS</strong> + CRAFT</li>
+        </ul>
+        <p class="about-copy">
+          My favourite work happens where things that don't usually meet come together.
+          People feel a product before they understand it, so I start with that feeling
+          and build everything else to hold it up.
         </p>
-        <div class="intro-links">
+      </section>
+
+      <nav class="links-row" aria-label="Social and resume links">
+        <div>
           <a href="mailto:akanshrawat.in@gmail.com">Email</a>
-          <a
-            href="https://github.com/wakkawakka3"
-            target="_blank"
-            rel="noopener noreferrer"
-            >GitHub</a
-          >
-          <a
-            href="https://www.linkedin.com/in/akansh-rawat/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >LinkedIn</a
-          >
-          <a
-            href="https://x.com/_akanshrawat"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Twitter</a
-          >
+          <a href="https://www.linkedin.com/in/akansh-rawat/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://x.com/_akanshrawat" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://github.com/wakkawakka3" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
-      </section>
+        <a class="resume-link" href="https://docs.google.com/document/d/1R5H6PAYnOkScMcsQNuX7cw9JsbCPe7VvcuZwp4OkAQo/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+      </nav>
 
-      <section id="skills" class="section">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills-list">
-          <div class="skill-item">
-            <h3>Languages</h3>
-            <p>Java, C, Python, JavaScript</p>
-          </div>
-          <div class="skill-item">
-            <h3>Web & Database</h3>
-            <p>HTML, CSS, SQL</p>
-          </div>
-          <div class="skill-item">
-            <h3>Cloud & DevOps</h3>
-            <p>AWS (Academy Cloud Foundations Certified), Git, GitHub</p>
-          </div>
-          <div class="skill-item">
-            <h3>Tools & Design</h3>
-            <p>Git, VS Code, Figma, Canva</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="work" class="section">
-        <h2 class="section-title">Featured Work</h2>
-        <div class="work-item">
-          <div class="work-header">
-            <h3>
-              <a
-                href="https://brewcrew.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >BrewCrew Club</a
-              >
-            </h3>
-          </div>
-          <p class="work-description">
-            India's premier coffee community platform. Collaborated on
-            full-stack development with focus on UI/UX design. Features cafe;
-            discovery, community reviews, and user engagement. Built using
-            AI-assisted development tools (vibe coding) alongside peers.
-            Deployed on Vercel with PostgreSQL backend and AWS S3 integration.
-          </p>
-          <div class="work-tags">
-            <span>Next.js</span>
-            <span>TypeScript</span>
-            <span>Tailwind CSS</span>
-            <span>PostgreSQL</span>
-            <span>AWS S3</span>
-          </div>
-        </div>
-
-        <!-- <div class="work-item">
-                <div class="work-header">
-                    <h3><a href="https://www.figma.com/design/D8oOMZNeERWbYSGoUBEEvT/bucket-list" target="_blank" rel="noopener noreferrer">Bucket List</a></h3>
-                </div>
-                <p class="work-description">
-                    Digital scrapbook for life goals and dreams. Design prototype inspired by the anime series ZOM 100.
-                    A thoughtful app to track and achieve personal aspirations.
-                </p>
-                <div class="work-tags">
-                    <span>Design</span>
-                    <span>Figma</span>
-                    <span>Prototype</span>
-                </div>
-            </div> -->
-
-        <div class="work-item">
-          <div class="work-header">
-            <h3>
-              <a
-                href="https://github.com/wakkawakka3/Vayora"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Vayora</a
-              >
-            </h3>
-          </div>
-          <p class="work-description">
-            A real-time weather web app with a clean, minimal UI and dynamic
-            design. Search any city worldwide to get live weather conditions,
-            humidity, wind speed, and a 5-day forecast. Built with vanilla
-            JavaScript and the OpenWeatherMap API.
-          </p>
-          <div class="work-tags">
-            <span>HTML/CSS</span>
-            <span>JavaScript</span>
-            <span>Weather API</span>
-          </div>
-        </div>
-      </section>
-
-      <section id="education" class="section">
-        <h2 class="section-title">Education</h2>
-        <div class="education-item">
-          <h3>B.Tech in Computer Engineering</h3>
-          <p class="education-meta">
-            AI & ML Specialization &mdash; KIIT University, Bhubaneswar
-          </p>
-          <p class="education-duration">Aug 2024 &ndash; May 2028</p>
-          <p class="education-coursework">
-            <strong>Relevant Coursework:</strong> Programming Fundamentals, OOP,
-            DBMS, Operating Systems, Data Structures & Algorithms, Computer
-            Organization and Architecture
-          </p>
-        </div>
-      </section>
-
-      <section id="resume" class="section">
-        <h2 class="section-title">Resume</h2>
-        <p class="resume-desc">
-          For a detailed overview of my experience, education, and projects,
-          check out my full resume.
-        </p>
-        <a
-          href="https://docs.google.com/document/d/1R5H6PAYnOkScMcsQNuX7cw9JsbCPe7VvcuZwp4OkAQo/edit?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="resume-link"
-        >
-          View Full Resume &rarr;
-        </a>
-      </section>
-
-      <section id="contact" class="section">
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="contact-desc">
-          Always interested in discussing new ideas, opportunities, or just
-          having a chat about tech and design.
-        </p>
-        <div class="contact-links">
-          <a href="mailto:akanshrawat.in@gmail.com" class="contact-link">
-            <i class="fas fa-envelope" aria-hidden="true"></i>
-            akanshrawat.in@gmail.com
+      <section id="work" class="work-section" aria-label="Selected projects">
+        <div class="project-previews">
+          <a class="preview-card" href="https://brewcrew.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="BrewCrew Club — Discover, connect, sip">
+            <div class="browser"><span>BrewCrew</span><i></i><i></i><i></i></div>
+            <div class="brew-art">
+              <img src="assets/images/brewcrew.png" alt="BrewCrew logo" />
+            </div>
           </a>
-          <a
-            href="https://github.com/wakkawakka3"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="contact-link"
-          >
-            <i class="fab fa-github" aria-hidden="true"></i> GitHub
+
+          <a class="preview-card" href="https://github.com/wakkawakka3/Vayora" target="_blank" rel="noopener noreferrer" aria-label="Vayora — Real-time weather web app">
+            <div class="browser"><span>Vayora</span><i></i><i></i><i></i></div>
+            <div class="weather-art">
+              <img src="assets/images/vayora.png" alt="Vayora logo" />
+            </div>
           </a>
-          <a
-            href="https://www.linkedin.com/in/akansh-rawat/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="contact-link"
-          >
-            <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
-          </a>
-          <a
-            href="https://x.com/_akanshrawat"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="contact-link"
-          >
-            <i class="fab fa-x-twitter" aria-hidden="true"></i> Twitter
+
+          <a class="preview-card" href="https://github.com/wakkawakka3" target="_blank" rel="noopener noreferrer" aria-label="Future project — something is on the way">
+            <div class="browser"><span>Future project</span><i></i><i></i><i></i></div>
+            <div class="blank-art">
+              <span>something is<br />on the way</span>
+            </div>
           </a>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <p>&copy; 2026 Akansh Rawat</p>
-      <p class="last-update">last update: May 18, 2026</p>
-      <div class="visitor-counter">
+      <div class="footer-left">
+        <span>akansh rawat</span>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="mailto:akanshrawat.in@gmail.com">Email</a>
+        <a href="https://github.com/wakkawakka3" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/akansh-rawat/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </nav>
+      <div class="visitor-counter" aria-label="Visitor count">
         <img
-          src="https://mayu.due.moe/get/@akanshrawat?theme=gelbooru&padding=6"
-          alt="visitor counter"
+          src="https://mayu.due.moe/get/@akanshrawat?theme=gelbooru&amp;padding=6"
+          alt="Visitor counter"
+          width="70"
+          height="18"
+          loading="lazy"
+          onerror="this.parentElement.style.display='none'"
         />
       </div>
     </footer>
-
     <script src="assets/js/script.js"></script>
   </body>
 </html>
