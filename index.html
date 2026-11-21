@@ -4,6 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Akansh Rawat — developer &amp; designer taking AI products from zero to one." />
+    <meta property="og:title" content="Akansh Rawat — Developer &amp; Designer" />
+    <meta property="og:description" content="Developer and designer building thoughtful AI products and digital experiences." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/images/moment-01.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
     <title>Akansh Rawat</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,8 +17,10 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body id="top">
+    <div class="ambient-bg" aria-hidden="true"></div>
     <div class="intro-screen" role="status" aria-label="Welcome to Akansh Rawat's portfolio" aria-live="polite">
       <p class="intro-screen-text"><span class="intro-screen-name">akansh rawat</span><span class="intro-screen-caret" aria-hidden="true"></span></p>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">dark</button>
     </div>
     <header class="topbar">
       <a class="signature" href="index.html#top">akansh</a>
@@ -91,12 +98,22 @@
             <div class="brew-art">
               <img src="assets/images/brewcrew.png" alt="BrewCrew logo" />
             </div>
+            <div class="project-meta">
+              <div><span>BrewCrew Club</span><time>2026</time></div>
+              <p>Community platform for cafés, conversations, and discovery.</p>
+              <small>Product · Frontend · Community</small>
+            </div>
           </a>
 
           <a class="preview-card" href="https://github.com/wakkawakka3/Vayora" target="_blank" rel="noopener noreferrer" aria-label="Vayora — Real-time weather web app">
             <div class="browser"><span>Vayora</span><i></i><i></i><i></i></div>
             <div class="weather-art">
               <img src="assets/images/vayora.png" alt="Vayora logo" />
+            </div>
+            <div class="project-meta">
+              <div><span>Vayora</span><time>2025</time></div>
+              <p>Real-time weather experience focused on clarity and speed.</p>
+              <small>Web app · API · Interface</small>
             </div>
           </a>
 
@@ -105,29 +122,29 @@
             <div class="blank-art">
               <span>something is<br />on the way</span>
             </div>
+            <div class="project-meta">
+              <div><span>Future project</span><time>Next</time></div>
+              <p>A new experiment currently taking shape.</p>
+              <small>In progress</small>
+            </div>
           </a>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="footer-left">
-        <span>akansh rawat</span>
+    <footer class="footer blueprint-footer">
+      <div class="footer-wordmark">
+        <span class="blueprint-cross cross-tl" aria-hidden="true"></span>
+        <span class="blueprint-cross cross-tr" aria-hidden="true"></span>
+        <a href="#top" class="footer-name">AKANSH RAWAT</a>
       </div>
-      <nav class="footer-links" aria-label="Footer navigation">
-        <a href="mailto:akanshrawat.in@gmail.com">Email</a>
-        <a href="https://github.com/wakkawakka3" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/akansh-rawat/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </nav>
-      <div class="visitor-counter" aria-label="Visitor count">
-        <img
-          src="https://mayu.due.moe/get/@akanshrawat?theme=gelbooru&amp;padding=6"
-          alt="Visitor counter"
-          width="70"
-          height="18"
-          loading="lazy"
-          onerror="this.parentElement.style.display='none'"
-        />
+      <div class="footer-meta">
+        <span>©2026 AKANSH RAWAT</span>
+        <div class="availability-status" aria-label="Availability">
+          <i aria-hidden="true"></i>
+          <span>open to work</span>
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">dark</button>
       </div>
     </footer>
     <script src="assets/js/script.js"></script>
