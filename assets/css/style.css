@@ -37,6 +37,150 @@ body {
   flex-direction: column;
 }
 
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-group(root),
+::view-transition-old(root),
+::view-transition-new(root),
+::view-transition-group(portfolio-header),
+::view-transition-old(portfolio-header),
+::view-transition-new(portfolio-header),
+::view-transition-group(portfolio-page),
+::view-transition-old(portfolio-page),
+::view-transition-new(portfolio-page) {
+  animation-duration: 620ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+::view-transition-old(portfolio-header),
+::view-transition-new(portfolio-header) {
+  animation-duration: 420ms;
+}
+
+:root[data-route-direction="forward"]::view-transition-old(portfolio-page) {
+  animation-name: page-out-left;
+}
+
+:root[data-route-direction="forward"]::view-transition-new(portfolio-page) {
+  animation-name: page-in-right;
+}
+
+:root[data-route-direction="back"]::view-transition-old(portfolio-page) {
+  animation-name: page-out-right;
+}
+
+:root[data-route-direction="back"]::view-transition-new(portfolio-page) {
+  animation-name: page-in-left;
+}
+
+@keyframes page-out-left {
+  to {
+    opacity: 0;
+    transform: translateX(-22px) scale(0.994);
+  }
+}
+
+@keyframes page-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(34px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes page-out-right {
+  to {
+    opacity: 0;
+    transform: translateX(22px) scale(0.994);
+  }
+}
+
+@keyframes page-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-34px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  pointer-events: none;
+  background: var(--paper);
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.topbar {
+  view-transition-name: portfolio-header;
+}
+
+.page {
+  view-transition-name: portfolio-page;
+}
+
+body.page-enter-forward .page {
+  animation: fallback-page-in-right 480ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+body.page-enter-back .page {
+  animation: fallback-page-in-left 480ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+body.page-leaving-forward::after,
+body.page-leaving-back::after {
+  animation: fallback-swipe 300ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+body.page-leaving-back::after {
+  transform-origin: right;
+}
+
+@keyframes fallback-page-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fallback-page-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fallback-swipe {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  100% {
+    opacity: 0.42;
+    transform: scaleX(1);
+  }
+}
+
 a {
   color: inherit;
 }
@@ -701,6 +845,136 @@ button:focus-visible {
   font-variant-numeric: tabular-nums;
 }
 
+/* --- About Page: Questions Accordion --- */
+.questions-section {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  align-items: start;
+  border-top: 1px solid transparent;
+}
+
+.questions-label {
+  position: sticky;
+  top: 24px;
+  padding-top: 12px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.question-list {
+  min-width: 0;
+}
+
+.question-item {
+  border-bottom: 1px solid var(--line);
+}
+
+.question-item h2 {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.question-trigger {
+  width: 100%;
+  min-height: 64px;
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #62666a;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+}
+
+.question-trigger > span:first-child {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.question-icon {
+  grid-column: 1;
+  grid-row: 1;
+  position: relative;
+  width: 12px;
+  height: 12px;
+  color: #9a9da0;
+}
+
+.question-icon::before,
+.question-icon::after {
+  content: "";
+  position: absolute;
+  background: currentColor;
+  transition: transform 220ms ease, opacity 220ms ease;
+}
+
+.question-icon::before {
+  left: 2px;
+  top: 5.5px;
+  width: 8px;
+  height: 1px;
+}
+
+.question-icon::after {
+  left: 5.5px;
+  top: 2px;
+  width: 1px;
+  height: 8px;
+}
+
+.question-item.is-open .question-trigger {
+  color: var(--ink);
+}
+
+.question-item.is-open .question-icon::after {
+  transform: rotate(135deg);
+}
+
+.question-item.is-open .question-icon::before {
+  transform: rotate(45deg);
+}
+
+.question-answer {
+  overflow: hidden;
+  transition: max-height 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.question-answer[hidden] {
+  display: block;
+  max-height: 0;
+  visibility: hidden;
+}
+
+.question-answer-inner {
+  padding: 4px 0 30px 34px;
+  color: var(--text-secondary);
+  font-size: 13.5px;
+  line-height: 1.62;
+}
+
+.question-answer-inner p {
+  margin: 0 0 20px;
+}
+
+.question-answer-inner p:last-child {
+  margin-bottom: 0;
+}
+
+.question-answer-inner a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* --- 404 Error Page --- */
 .error-page {
   display: flex;
@@ -888,6 +1162,23 @@ button:focus-visible {
     margin-bottom: 36px;
   }
 
+  .questions-section {
+    grid-template-columns: 1fr;
+  }
+
+  .questions-label {
+    position: static;
+    padding: 0 0 18px;
+  }
+
+  .question-trigger {
+    min-height: 58px;
+  }
+
+  .question-answer-inner {
+    padding: 2px 0 24px 34px;
+  }
+
   .footer {
     padding: 32px 20px 24px;
     grid-template-columns: 1fr auto;
@@ -913,6 +1204,21 @@ button:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  ::view-transition-group(root),
+  ::view-transition-old(root),
+  ::view-transition-new(root),
+  ::view-transition-group(portfolio-header),
+  ::view-transition-old(portfolio-header),
+  ::view-transition-new(portfolio-header),
+  ::view-transition-group(portfolio-page),
+  ::view-transition-old(portfolio-page),
+  ::view-transition-new(portfolio-page),
+  body::after,
+  body.page-enter-forward .page,
+  body.page-enter-back .page {
+    animation-duration: 0.001ms !important;
   }
 
   *,
