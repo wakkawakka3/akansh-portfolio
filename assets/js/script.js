@@ -3,6 +3,58 @@
  * Handles accessible contact popover, clipboard interactions, and smooth navigation.
  */
 (() => {
+  // --- First-load Typewriter Introduction ---
+  const intro = document.querySelector(".intro-screen");
+  const introName = document.querySelector(".intro-screen-name");
+
+  if (intro && introName) {
+    const introAlreadyShown = window.sessionStorage.getItem("portfolio-intro-shown") === "true";
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (introAlreadyShown) {
+      intro.remove();
+    } else {
+      window.sessionStorage.setItem("portfolio-intro-shown", "true");
+      document.body.classList.add("intro-active");
+
+      const text = introName.textContent;
+      introName.textContent = "";
+
+      let characterIndex = 0;
+      let typeTimer = null;
+      let introFinished = false;
+
+      const finishIntro = () => {
+        if (introFinished) return;
+        introFinished = true;
+        if (typeTimer) window.clearInterval(typeTimer);
+        intro.classList.add("is-leaving");
+        window.setTimeout(() => {
+          intro.remove();
+          document.body.classList.remove("intro-active");
+        }, reducedMotion ? 20 : 520);
+      };
+
+      if (reducedMotion) {
+        introName.textContent = text;
+        window.setTimeout(finishIntro, 450);
+      } else {
+        typeTimer = window.setInterval(() => {
+          introName.textContent = text.slice(0, characterIndex + 1);
+          characterIndex += 1;
+
+          if (characterIndex >= text.length) {
+            window.clearInterval(typeTimer);
+            typeTimer = null;
+            window.setTimeout(finishIntro, 520);
+          }
+        }, 72);
+      }
+
+      intro.addEventListener("click", finishIntro);
+    }
+  }
+
   // --- Page Route Transitions ---
   const direction = window.sessionStorage.getItem("portfolio-route-direction");
 
