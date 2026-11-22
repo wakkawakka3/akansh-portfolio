@@ -158,6 +158,20 @@
     const resumeTrigger = document.querySelector(".resume-link");
     const resumeClose = resumeModal.querySelector(".resume-close");
     const resumeBackdrop = resumeModal.querySelector(".resume-backdrop");
+    const mobileResume = window.matchMedia("(max-width: 640px)");
+
+    const updateResumeAccessibility = () => {
+      if (!mobileResume.matches) {
+        resumeTrigger?.setAttribute("aria-haspopup", "dialog");
+        resumeTrigger?.setAttribute("aria-expanded", String(!resumeModal.hidden));
+      } else {
+        resumeTrigger?.removeAttribute("aria-haspopup");
+        resumeTrigger?.removeAttribute("aria-expanded");
+      }
+    };
+
+    updateResumeAccessibility();
+    mobileResume.addEventListener("change", updateResumeAccessibility);
 
     const setResume = (open) => {
       if (open) {
@@ -179,7 +193,11 @@
       }, 620);
     };
 
-    resumeTrigger?.addEventListener("click", () => setResume(true));
+    resumeTrigger?.addEventListener("click", (event) => {
+      if (mobileResume.matches) return;
+      event.preventDefault();
+      setResume(true);
+    });
     resumeClose?.addEventListener("click", () => setResume(false));
     resumeBackdrop?.addEventListener("click", () => setResume(false));
     document.addEventListener("keydown", (event) => {
