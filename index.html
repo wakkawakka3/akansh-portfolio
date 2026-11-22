@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&amp;display=swap" rel="stylesheet" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
@@ -22,11 +23,11 @@
       <p class="intro-screen-text"><span class="intro-screen-name">akansh rawat</span><span class="intro-screen-caret" aria-hidden="true"></span></p>
     </div>
     <header class="topbar">
-      <a class="signature" href="index.html#top">akansh</a>
+      <a class="signature" href="index.html#top" aria-label="Akansh Rawat — Home">akansh<span>.</span></a>
       <nav class="nav" aria-label="Primary navigation">
-        <a class="nav-item nav-home" href="index.html#top">home</a>
-        <a class="nav-item nav-work" href="index.html#work">work</a>
-        <a class="nav-item nav-about" href="about.html">about</a>
+        <a class="nav-item nav-home" href="index.html#top">Home</a>
+        <a class="nav-item nav-work" href="index.html#work">Work</a>
+        <a class="nav-item nav-about" href="about.html">About</a>
       </nav>
       <div class="contact-menu">
         <button class="say-hi" type="button" aria-haspopup="dialog" aria-expanded="false">say hi.</button>
@@ -87,7 +88,15 @@
           <a href="https://x.com/_akanshrawat" target="_blank" rel="noopener noreferrer">X</a>
           <a href="https://github.com/wakkawakka3" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
-        <a class="resume-link" href="https://docs.google.com/document/d/1R5H6PAYnOkScMcsQNuX7cw9JsbCPe7VvcuZwp4OkAQo/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+        <button class="resume-link" type="button" aria-haspopup="dialog" aria-expanded="false">Resume</button>
+        <div class="resume-hire-note" aria-hidden="true">
+          <span data-text="pls hire me">pls hire me</span>
+          <svg viewBox="0 0 86 58">
+            <path d="M82 15 C58 18 38 28 14 42" />
+            <path d="M14 42 C20 40 25 39 30 40" />
+            <path d="M14 42 C19 44 23 46 27 50" />
+          </svg>
+        </div>
       </nav>
 
       <section id="work" class="work-section" aria-label="Selected projects">
@@ -130,6 +139,91 @@
         </div>
       </section>
     </main>
+
+    <div class="resume-modal" role="dialog" aria-modal="true" aria-label="Akansh Rawat resume" hidden>
+      <div class="resume-backdrop" aria-hidden="true"></div>
+      <article class="resume-sheet">
+        <button class="resume-close" type="button" aria-label="Close resume">×</button>
+        <header class="resume-header">
+          <strong>AKANSH RAWAT</strong>
+          <span class="resume-header-links">
+            <a href="https://www.linkedin.com/in/akansh-rawat/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="mailto:akanshrawat.in@gmail.com">Email</a>
+          </span>
+        </header>
+
+        <section class="resume-section">
+          <h2>Education</h2>
+          <div class="resume-row">
+            <div>
+              <strong>B.Tech in Computer Engineering — AI &amp; ML Specialisation</strong>
+              <p>KIIT University, Bhubaneswar · Relevant coursework in OOP, DBMS, OS, DSA, and computer architecture</p>
+            </div>
+            <time>Aug 2024 → May 2028</time>
+          </div>
+        </section>
+
+        <section class="resume-section">
+          <h2>Projects</h2>
+          <div class="resume-row">
+            <div>
+              <strong>BrewCrew — India Coffee Community Platform</strong>
+              <p>Led UI/UX and frontend for a full-stack café discovery and community platform built with Next.js, TypeScript, Prisma, PostgreSQL, and AWS S3.</p>
+            </div>
+            <time>2025</time>
+          </div>
+          <div class="resume-row">
+            <div>
+              <strong>Personal Portfolio Website</strong>
+              <p>Designed and built a responsive, hand-coded portfolio in HTML, CSS, and JavaScript with no frameworks.</p>
+            </div>
+            <time>2024</time>
+          </div>
+          <div class="resume-row">
+            <div>
+              <strong>Vayora — Real-time Weather App</strong>
+              <p>Built a live weather search app using vanilla JavaScript and the OpenWeatherMap API.</p>
+            </div>
+            <time>2026</time>
+          </div>
+        </section>
+
+        <section class="resume-section resume-community">
+          <h2>Community</h2>
+          <div class="resume-row">
+            <div>
+              <strong>AWS Academy Cloud Foundations</strong>
+              <p>Completed 20 hours of foundational cloud coursework and earned the AWS Academy Graduate credential.</p>
+            </div>
+            <time>Mar 2026</time>
+          </div>
+          <div class="resume-row">
+            <div>
+              <strong>Achievements &amp; Activities</strong>
+              <p>Smart India Hackathon 2025 participant and Karate black belt. Currently researching AI agents under a CN professor.</p>
+            </div>
+            <time>Present</time>
+          </div>
+        </section>
+
+        <section class="resume-footer-grid">
+          <div>
+            <h2>Languages</h2>
+            <p>English</p>
+          </div>
+          <div>
+            <h2>Tools</h2>
+            <p>Java, C, Python, JavaScript, HTML, CSS, SQL, Git, GitHub, Figma</p>
+          </div>
+          <div>
+            <h2>Skills</h2>
+            <p>Full-stack development, UI/UX, AWS Cloud, AI &amp; ML, Data Structures</p>
+          </div>
+        </section>
+
+        <a class="resume-download" href="https://docs.google.com/document/d/1R5H6PAYnOkScMcsQNuX7cw9JsbCPe7VvcuZwp4OkAQo/export?format=pdf" target="_blank" rel="noopener noreferrer">Download PDF</a>
+      </article>
+    </div>
 
     <footer class="footer blueprint-footer">
       <div class="footer-wordmark">

@@ -9,7 +9,7 @@
     window.setTimeout(() => {
       document.body.classList.remove(`page-enter-${routeDirection}`);
       window.sessionStorage.removeItem("portfolio-route-direction");
-    }, 620);
+    }, 520);
   }
 
   document.querySelectorAll('a[href="index.html"], a[href="index.html#top"], a[href="about.html"]').forEach((link) => {
@@ -153,6 +153,40 @@
     }
   }
 
+  const resumeModal = document.querySelector(".resume-modal");
+  if (resumeModal) {
+    const resumeTrigger = document.querySelector(".resume-link");
+    const resumeClose = resumeModal.querySelector(".resume-close");
+    const resumeBackdrop = resumeModal.querySelector(".resume-backdrop");
+
+    const setResume = (open) => {
+      if (open) {
+        resumeModal.hidden = false;
+        resumeModal.classList.remove("is-closing");
+        document.body.classList.add("resume-open");
+        if (resumeTrigger) resumeTrigger.setAttribute("aria-expanded", "true");
+        window.setTimeout(() => resumeClose?.focus(), 0);
+        return;
+      }
+
+      resumeModal.classList.add("is-closing");
+      document.body.classList.remove("resume-open");
+      if (resumeTrigger) resumeTrigger.setAttribute("aria-expanded", "false");
+      window.setTimeout(() => {
+        resumeModal.hidden = true;
+        resumeModal.classList.remove("is-closing");
+        resumeTrigger?.focus();
+      }, 620);
+    };
+
+    resumeTrigger?.addEventListener("click", () => setResume(true));
+    resumeClose?.addEventListener("click", () => setResume(false));
+    resumeBackdrop?.addEventListener("click", () => setResume(false));
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !resumeModal.hidden) setResume(false);
+    });
+  }
+
   const workSection = document.getElementById("work");
   if (workSection) {
     document.querySelectorAll('.signature, a[href="#top"], a[href="index.html#top"]').forEach((link) => {
@@ -197,6 +231,12 @@
     const answer = item.querySelector(".question-answer");
     if (!trigger || !answer) return;
 
+    if (item.classList.contains("is-open")) {
+      answer.style.maxHeight = `${answer.scrollHeight}px`;
+    } else {
+      answer.style.maxHeight = "0px";
+    }
+
     trigger.addEventListener("click", () => {
       const willOpen = !item.classList.contains("is-open");
 
@@ -206,13 +246,27 @@
         if (!otherTrigger || !otherAnswer) return;
         otherItem.classList.remove("is-open");
         otherTrigger.setAttribute("aria-expanded", "false");
-        otherAnswer.hidden = true;
+        otherAnswer.style.maxHeight = "0px";
+        window.setTimeout(() => {
+          if (!otherItem.classList.contains("is-open")) {
+            otherAnswer.hidden = true;
+          }
+        }, 420);
       });
 
       if (willOpen) {
+        answer.hidden = false;
         item.classList.add("is-open");
         trigger.setAttribute("aria-expanded", "true");
-        answer.hidden = false;
+        answer.style.maxHeight = "0px";
+        window.requestAnimationFrame(() => {
+          answer.style.maxHeight = `${answer.scrollHeight}px`;
+        });
+        window.setTimeout(() => {
+          if (item.classList.contains("is-open")) {
+            answer.style.maxHeight = "none";
+          }
+        }, 420);
       }
     });
   });
